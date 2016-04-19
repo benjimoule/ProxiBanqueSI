@@ -6,7 +6,7 @@
 package com.adaming.business;
 
 import com.adaming.entities.Client;
-import dao.IDaoClient;
+import com.adaming.dao.IDaoClient;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;

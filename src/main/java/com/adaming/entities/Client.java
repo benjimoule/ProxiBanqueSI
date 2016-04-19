@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -43,11 +44,12 @@ public class Client {
     @Column(name = "telephone")
     private String telephone;
 
-    /*
-     private CompteCourant cc;
+    @OneToOne
+    private CompteCourant cc;
     
-     private CompteEpargne ce;
-     */
+    @OneToOne
+    private CompteEpargne ce;
+    
 
     public Client() {
     }

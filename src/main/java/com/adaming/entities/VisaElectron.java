@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
-
-import com.adaming.entities.Client;
-import java.io.Serializable;
-import javax.ejb.Stateless;
+package com.adaming.entities;
 
 /**
  *
- * @author inti0294
+ * @author inti0302
  */
-@Stateless
-public class daoClient extends DaoGenerique<Client, Serializable>  {
+public class VisaElectron {
     
 }
