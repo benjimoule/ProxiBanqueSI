@@ -7,6 +7,7 @@ package com.adaming.dao;
 
 
 import com.adaming.entities.CompteCourant;
+import com.adaming.entities.VisaElectron;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 
@@ -16,5 +17,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class daoCompteCourant extends DaoGenerique<CompteCourant, Integer> implements IDaoCompteCourant{
+
+    public daoCompteCourant() {
+        this.classe=CompteCourant.class;
+    }
     
 }

@@ -6,6 +6,7 @@
 package com.adaming.dao;
 
 import com.adaming.entities.Client;
+import com.adaming.entities.VisaElectron;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 
@@ -15,5 +16,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class daoClient extends DaoGenerique<Client, Integer> implements IDaoClient{
+
+    public daoClient() {
+        this.classe=Client.class;
+    }
     
 }

@@ -6,6 +6,7 @@
 package com.adaming.dao;
 
 import com.adaming.entities.Agence;
+import com.adaming.entities.VisaElectron;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 
@@ -15,5 +16,8 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class daoAgence extends DaoGenerique<Agence, Integer> implements IDaoAgence{
+
+    public daoAgence() {
+        this.classe=Agence.class;}
     
 }

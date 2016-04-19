@@ -7,6 +7,7 @@ package com.adaming.dao;
 
 import com.adaming.entities.CompteEpargne;
 import com.adaming.entities.Conseiller;
+import com.adaming.entities.VisaElectron;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 
@@ -16,5 +17,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class daoCompteEpargne extends DaoGenerique<CompteEpargne, Integer> implements IDaoCompteEpargne{
+
+    public daoCompteEpargne() {
+        this.classe=CompteEpargne.class;
+    }
     
 }

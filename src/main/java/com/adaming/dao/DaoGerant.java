@@ -16,5 +16,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class DaoGerant extends DaoGenerique<Gerant, Integer> implements IDaoGerant{
+
+    public DaoGerant() {
+        this.classe=Gerant.class;
+    }
     
 }
