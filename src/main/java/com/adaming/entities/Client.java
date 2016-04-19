@@ -128,6 +128,22 @@ public class Client {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    public CompteCourant getCc() {
+        return cc;
+    }
+
+    public void setCc(CompteCourant cc) {
+        this.cc = cc;
+    }
+
+    public CompteEpargne getCe() {
+        return ce;
+    }
+
+    public void setCe(CompteEpargne ce) {
+        this.ce = ce;
+    }
     
     
 }
