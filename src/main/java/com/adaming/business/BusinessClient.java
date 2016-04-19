@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.PathParam;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -18,7 +19,7 @@ import javax.ws.rs.PathParam;
  */
 public class BusinessClient {
   
-    @EJB
+    @Autowired
     private IDaoClient daoClient;
     
     
