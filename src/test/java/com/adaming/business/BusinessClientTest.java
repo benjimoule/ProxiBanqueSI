@@ -55,7 +55,7 @@ public class BusinessClientTest extends TestCase {
         Client result = instance.obtenirClient(id);
        assert( result!=null);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -63,11 +63,15 @@ public class BusinessClientTest extends TestCase {
      */
     public void testAjouterClient() {
         System.out.println("ajouterClient");
-        Client client = null;
+        
+        Client client = new Client();
         BusinessClient instance = new BusinessClient();
+        List<Client> avant =instance.obtenirClients();
+        Integer longeurAvant =avant.size();
         instance.ajouterClient(client);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Client> apres =instance.obtenirClients();
+         Integer longeurApres =avant.size();
+        assert(longeurApres==longeurAvant+1);
     }
 
     /**
@@ -75,11 +79,12 @@ public class BusinessClientTest extends TestCase {
      */
     public void testModifierClient() {
         System.out.println("modifierClient");
-        Client client = null;
         BusinessClient instance = new BusinessClient();
+        
+        Client clientTemoin = instance.obtenirClient(1);
+        Client client=new Client();
         instance.modifierClient(client);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     assert(client!=clientTemoin);
     }
 
     /**
@@ -87,11 +92,13 @@ public class BusinessClientTest extends TestCase {
      */
     public void testSupprimerClient() {
         System.out.println("supprimerClient");
-        Integer id = null;
         BusinessClient instance = new BusinessClient();
-        instance.supprimerClient(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Client> avant =instance.obtenirClients();
+        Integer longeurAvant =avant.size();
+        instance.supprimerClient(1);
+        List<Client> apres =instance.obtenirClients();
+         Integer longeurApres =avant.size();
+        assert(longeurApres==longeurAvant-1);
     }
     
 }
