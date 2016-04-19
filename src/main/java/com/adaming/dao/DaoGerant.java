@@ -6,6 +6,7 @@
 package com.adaming.dao;
 
 import com.adaming.entities.Conseiller;
+import com.adaming.entities.Gerant;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 
@@ -14,6 +15,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class DaoGerant extends DaoGenerique<Conseiller, Integer>{
+public class DaoGerant extends DaoGenerique<Gerant, Integer> implements IDaoGerant{
     
 }

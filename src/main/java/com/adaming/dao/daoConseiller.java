@@ -15,6 +15,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class daoConseiller extends DaoGenerique<Conseiller, Integer>  {
+public class daoConseiller extends DaoGenerique<Conseiller, Integer> implements IDaoConseiller{
     
 }

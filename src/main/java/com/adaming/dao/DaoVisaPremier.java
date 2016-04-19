@@ -15,6 +15,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class DaoVisaPremier extends DaoGenerique<VisaPremier, Integer>{
+public class DaoVisaPremier extends DaoGenerique<VisaPremier, Integer> implements IDaoVisaPremier{
     
 }

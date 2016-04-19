@@ -15,6 +15,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class daoCompteCourant extends DaoGenerique<CompteCourant, Integer> {
+public class daoCompteCourant extends DaoGenerique<CompteCourant, Integer> implements IDaoCompteCourant{
     
 }

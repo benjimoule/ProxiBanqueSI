@@ -17,7 +17,7 @@ import javax.persistence.criteria.CriteriaQuery;
  */
 public abstract class DaoGenerique<T, PK extends Serializable> implements IDaoGenerique<T, PK>{
     
-    @PersistenceContext(unitName = "ServeurForumPU")
+    @PersistenceContext(unitName = "ProxiBanqueSIPU")
     protected EntityManager em;
     
     protected Class classe; 

@@ -5,15 +5,14 @@
  */
 package com.adaming.dao;
 
-import com.adaming.entities.CompteBancaire;
-import java.io.Serializable;
+import com.adaming.entities.CompteCourant;
 import javax.ejb.Local;
 
 /**
  *
- * @author inti0294
+ * @author inti0302
  */
 @Local
-public interface IDaoCompteBancaire extends IDaoGenerique<CompteBancaire, Integer>{
+public interface IDaoCompteCourant extends IDaoGenerique<CompteCourant, Integer>{
     
 }
