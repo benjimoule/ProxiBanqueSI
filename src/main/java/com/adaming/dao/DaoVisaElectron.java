@@ -15,6 +15,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class DaoVisaElectron extends DaoGenerique<VisaElectron, Serializable>{
+public class DaoVisaElectron extends DaoGenerique<VisaElectron, Integer>{
     
 }

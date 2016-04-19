@@ -14,6 +14,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class daoClient extends DaoGenerique<Client, Serializable>  {
+public class daoClient extends DaoGenerique<Client, Integer>  {
     
 }

@@ -14,6 +14,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class DaoGerant extends DaoGenerique<Conseiller, Serializable>{
+public class DaoGerant extends DaoGenerique<Conseiller, Integer>{
     
 }

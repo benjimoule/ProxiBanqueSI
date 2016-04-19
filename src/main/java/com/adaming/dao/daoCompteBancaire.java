@@ -15,6 +15,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class daoCompteBancaire  extends DaoGenerique<CompteBancaire, Serializable> {
+public class daoCompteBancaire  extends DaoGenerique<CompteBancaire, Integer> {
     
 }

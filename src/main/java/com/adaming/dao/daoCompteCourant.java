@@ -5,7 +5,8 @@
  */
 package com.adaming.dao;
 
-import com.adaming.entities.CompteBancaire;
+
+import com.adaming.entities.CompteCourant;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 
@@ -14,6 +15,6 @@ import javax.ejb.Stateless;
  * @author inti0294
  */
 @Stateless
-public class daoCompteCourant extends DaoGenerique<CompteCourant, Serializable> {
+public class daoCompteCourant extends DaoGenerique<CompteCourant, Integer> {
     
 }
