@@ -7,13 +7,13 @@ package dao;
 
 import com.adaming.entities.Client;
 import java.io.Serializable;
-import javax.ejb.Stateless;
+import javax.ejb.Local;
 
 /**
  *
  * @author inti0294
  */
-@Stateless
-public class daoClient extends DaoGenerique<Client, Serializable>  {
+@Local
+public interface IDaoClient extends IDaoGenerique<Client, Integer>{
     
 }
