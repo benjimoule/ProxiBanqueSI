@@ -34,6 +34,9 @@ public class Conseiller implements Serializable{
     
     @ManyToOne(targetEntity = Agence.class)
     private Agence agence;
+    
+    @ManyToOne(targetEntity = Gerant.class)
+    private Gerant gerant;
 
     public Conseiller() {
     }

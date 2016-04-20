@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -38,6 +39,9 @@ public class Gerant implements Serializable{
     
     @Column(name = "civilite")
     private String civilite;
+    
+    @OneToOne
+    private Agence agence;
 
     public Gerant() {
     }

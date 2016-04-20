@@ -7,6 +7,7 @@ package com.adaming.entities;
 
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,9 +16,13 @@ import javax.persistence.Id;
  *
  * @author inti0302
  */
-public class CarteBancaire{
+@Entity
+public class CarteBancaire implements Serializable{
     
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_carte")
+    private int id;
     
     @Column(name = "numero")
     private int numero;
@@ -40,6 +45,24 @@ public class CarteBancaire{
         this.pictogramme = pictogramme;
         this.active = active;
     }
+
+    public CarteBancaire(int id, int numero, String dateValidite, int pictogramme, boolean active) {
+        this.id = id;
+        this.numero = numero;
+        this.dateValidite = dateValidite;
+        this.pictogramme = pictogramme;
+        this.active = active;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
 
     public int getNumero() {
         return numero;
@@ -71,6 +94,28 @@ public class CarteBancaire{
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CarteBancaire other = (CarteBancaire) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
     
     

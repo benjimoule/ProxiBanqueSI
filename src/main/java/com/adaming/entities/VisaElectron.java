@@ -19,11 +19,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "visa_electron")
-public class VisaElectron extends CarteBancaire implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_carte")
-    private int id;
+public class VisaElectron extends CarteBancaire{
+    
 
     public VisaElectron() {
     }
@@ -33,39 +30,7 @@ public class VisaElectron extends CarteBancaire implements Serializable{
     }
 
     public VisaElectron(int id, int numero, String dateValidite, int pictogramme, boolean active) {
-        super(numero, dateValidite, pictogramme, active);
-        this.id = id;
+        super(id, numero, dateValidite, pictogramme, active);
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + this.id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final VisaElectron other = (VisaElectron) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
-    
     
 }

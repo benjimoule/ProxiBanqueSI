@@ -22,11 +22,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "compte_courant")
-public class CompteCourant extends CompteBancaire implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_compte_courant")
-    private int id;
+public class CompteCourant extends CompteBancaire{
+    
     
     @OneToOne(fetch = FetchType.LAZY)
     private Client client;
@@ -48,19 +45,10 @@ public class CompteCourant extends CompteBancaire implements Serializable{
     }
 
     public CompteCourant(int id, Client client, float decouvert, CarteBancaire carte, Date dateOuverture, float solde) {
-        super(dateOuverture, solde);
-        this.id = id;
+        super(id, dateOuverture, solde);
         this.client = client;
         this.decouvert = decouvert;
         this.carte = carte;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Client getClient() {
@@ -87,27 +75,7 @@ public class CompteCourant extends CompteBancaire implements Serializable{
         this.carte = carte;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + this.id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final CompteCourant other = (CompteCourant) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
+    
     
     
 }
