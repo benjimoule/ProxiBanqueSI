@@ -44,6 +44,28 @@ public class VisaPremier extends CarteBancaire implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final VisaPremier other = (VisaPremier) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
     
     
 }

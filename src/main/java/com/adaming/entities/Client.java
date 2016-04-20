@@ -8,6 +8,7 @@ package com.adaming.entities;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -45,10 +46,10 @@ public class Client implements Serializable{
     @Column(name = "telephone")
     private String telephone;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private CompteCourant cc;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private CompteEpargne ce;
     
 
@@ -144,6 +145,28 @@ public class Client implements Serializable{
 
     public void setCe(CompteEpargne ce) {
         this.ce = ce;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Client other = (Client) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
     
     

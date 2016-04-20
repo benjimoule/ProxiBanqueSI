@@ -44,6 +44,28 @@ public class VisaElectron extends CarteBancaire implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final VisaElectron other = (VisaElectron) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
     
     
 }

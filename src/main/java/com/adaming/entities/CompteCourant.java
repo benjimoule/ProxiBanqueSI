@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,13 +28,13 @@ public class CompteCourant extends CompteBancaire implements Serializable{
     @Column(name = "id_compte_courant")
     private int id;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Client client;
     
     @Column(name = "decouvert")
     private float decouvert;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private CarteBancaire carte;
 
     public CompteCourant() {
@@ -84,6 +85,28 @@ public class CompteCourant extends CompteBancaire implements Serializable{
 
     public void setCarte(CarteBancaire carte) {
         this.carte = carte;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CompteCourant other = (CompteCourant) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
     
     

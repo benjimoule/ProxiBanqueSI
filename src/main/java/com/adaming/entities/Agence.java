@@ -24,7 +24,7 @@ public class Agence implements Serializable{
     @Column(name = "id_agence")
     private int id;
     
-    @OneToOne
+    @OneToOne(mappedBy = "agence")
     private Gerant gerant;
     
     @Column(name = "adresse")
@@ -92,6 +92,28 @@ public class Agence implements Serializable{
 
     public void setVille(String ville) {
         this.ville = ville;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 29 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Agence other = (Agence) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
     
     
