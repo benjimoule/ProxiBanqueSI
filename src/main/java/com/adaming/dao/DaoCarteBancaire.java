@@ -5,19 +5,17 @@
  */
 package com.adaming.dao;
 
-import com.adaming.entities.Client;
-import java.io.Serializable;
+import com.adaming.entities.CarteBancaire;
 import javax.ejb.Stateless;
 
 /**
  *
- * @author inti0294
+ * @author inti0302
  */
 @Stateless
-public class daoClient extends DaoGenerique<Client, Integer> implements IDaoClient{
-
-    public daoClient() {
-        this.classe=Client.class;
-    }
+public class DaoCarteBancaire extends DaoGenerique<CarteBancaire, Integer> implements IDaoCarteBancaire{
     
+    public DaoCarteBancaire() {
+       this.classe=CarteBancaire.class;
+    }
 }

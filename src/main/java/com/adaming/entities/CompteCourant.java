@@ -15,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -22,8 +24,18 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "compte_courant")
-public class CompteCourant extends CompteBancaire{
+public class CompteCourant implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_compte_courant")
+    private int id;
     
+    @Column(name = "date_ouverture")
+    @Temporal(TemporalType.DATE)
+    private Date dateOuverture;
+    
+    @Column(name = "solde")
+    private float solde;
     
     @OneToOne(fetch = FetchType.LAZY)
     private Client client;
@@ -37,19 +49,24 @@ public class CompteCourant extends CompteBancaire{
     public CompteCourant() {
     }
 
-    public CompteCourant(Client client, float decouvert, CarteBancaire carte, Date dateOuverture, float solde) {
-        super(dateOuverture, solde);
+    public CompteCourant(Date dateOuverture, float solde, Client client, float decouvert, CarteBancaire carte) {
+        this.dateOuverture = dateOuverture;
+        this.solde = solde;
         this.client = client;
         this.decouvert = decouvert;
         this.carte = carte;
     }
 
-    public CompteCourant(int id, Client client, float decouvert, CarteBancaire carte, Date dateOuverture, float solde) {
-        super(id, dateOuverture, solde);
+    public CompteCourant(int id, Date dateOuverture, float solde, Client client, float decouvert, CarteBancaire carte) {
+        this.id = id;
+        this.dateOuverture = dateOuverture;
+        this.solde = solde;
         this.client = client;
         this.decouvert = decouvert;
         this.carte = carte;
     }
+
+    
 
     public Client getClient() {
         return client;
@@ -73,6 +90,52 @@ public class CompteCourant extends CompteBancaire{
 
     public void setCarte(CarteBancaire carte) {
         this.carte = carte;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getDateOuverture() {
+        return dateOuverture;
+    }
+
+    public void setDateOuverture(Date dateOuverture) {
+        this.dateOuverture = dateOuverture;
+    }
+
+    public float getSolde() {
+        return solde;
+    }
+
+    public void setSolde(float solde) {
+        this.solde = solde;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 61 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CompteCourant other = (CompteCourant) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
 
     

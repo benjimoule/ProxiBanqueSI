@@ -7,7 +7,6 @@ package com.adaming.dao;
 
 
 import com.adaming.entities.CompteCourant;
-import com.adaming.entities.VisaElectron;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 

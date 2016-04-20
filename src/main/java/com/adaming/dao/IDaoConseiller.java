@@ -5,7 +5,6 @@
  */
 package com.adaming.dao;
 
-import com.adaming.entities.CompteBancaire;
 import com.adaming.entities.Conseiller;
 import javax.ejb.Local;
 

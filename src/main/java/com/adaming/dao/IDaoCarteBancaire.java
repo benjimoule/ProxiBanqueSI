@@ -5,15 +5,14 @@
  */
 package com.adaming.dao;
 
-import com.adaming.entities.Gerant;
-import com.adaming.entities.VisaElectron;
+import com.adaming.entities.CarteBancaire;
 import javax.ejb.Local;
 
 /**
  *
- * @author inti0294
+ * @author inti0302
  */
 @Local
-public interface IDaoVisaElectron  extends IDaoGenerique<VisaElectron, Integer>{
+public interface IDaoCarteBancaire extends IDaoGenerique<CarteBancaire, Integer>{
     
 }
