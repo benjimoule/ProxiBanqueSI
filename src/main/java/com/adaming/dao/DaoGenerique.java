@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 /**
@@ -24,7 +25,8 @@ public abstract class DaoGenerique<T, PK extends Serializable> implements IDaoGe
     
     @Override
     public List<T> getAll(){
-        CriteriaQuery<T> criteria = em.getCriteriaBuilder().createQuery(classe);
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<T> criteria = cb.createQuery(classe);
         return em.createQuery(criteria.select(criteria.from(classe))).getResultList();
     }
     

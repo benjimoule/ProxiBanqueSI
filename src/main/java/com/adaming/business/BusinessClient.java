@@ -10,6 +10,7 @@ import com.adaming.dao.IDaoClient;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.ws.rs.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,9 +18,10 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author inti0294
  */
+@Stateless
 public class BusinessClient {
   
-    @Autowired
+    @EJB
     private IDaoClient daoClient;
     
     

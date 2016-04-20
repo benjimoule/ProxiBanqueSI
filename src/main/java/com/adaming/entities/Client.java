@@ -12,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -51,6 +52,9 @@ public class Client implements Serializable{
     
     @OneToOne(fetch = FetchType.EAGER)
     private CompteEpargne ce;
+    
+    @ManyToOne
+    private Conseiller conseiller;
     
 
     public Client() {
@@ -166,8 +170,37 @@ public class Client implements Serializable{
         if (this.id != other.id) {
             return false;
         }
+        if ((this.nom == null) ? (other.nom != null) : !this.nom.equals(other.nom)) {
+            return false;
+        }
+        if ((this.prenom == null) ? (other.prenom != null) : !this.prenom.equals(other.prenom)) {
+            return false;
+        }
+        if ((this.adresse == null) ? (other.adresse != null) : !this.adresse.equals(other.adresse)) {
+            return false;
+        }
+        if (this.codePostal != other.codePostal) {
+            return false;
+        }
+        if ((this.ville == null) ? (other.ville != null) : !this.ville.equals(other.ville)) {
+            return false;
+        }
+        if ((this.telephone == null) ? (other.telephone != null) : !this.telephone.equals(other.telephone)) {
+            return false;
+        }
+        if (this.cc != other.cc && (this.cc == null || !this.cc.equals(other.cc))) {
+            return false;
+        }
+        if (this.ce != other.ce && (this.ce == null || !this.ce.equals(other.ce))) {
+            return false;
+        }
+        if (this.conseiller != other.conseiller && (this.conseiller == null || !this.conseiller.equals(other.conseiller))) {
+            return false;
+        }
         return true;
     }
+
+    
     
     
 }

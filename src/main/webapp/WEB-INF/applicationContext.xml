@@ -47,12 +47,12 @@
 			<ref bean="sessionFactory" />
 		</property>
 
-	</bean>
-	 pour utiliser les annotations spring 
-	<context:annotation-config />
-	 package contenant les classes annotées spring 
-	<context:component-scan base-package="fr" />
-	 prise en compte du gestionnaire de transaction pour @Transactional 
-	<tx:annotation-driven transaction-manager="transactionManager" />
--->
+            </bean>
+             pour utiliser les annotations spring 
+            <context:annotation-config />
+             package contenant les classes annotées spring 
+            <context:component-scan base-package="fr" />
+             prise en compte du gestionnaire de transaction pour @Transactional 
+            <tx:annotation-driven transaction-manager="transactionManager" />
+    -->
 </beans>
