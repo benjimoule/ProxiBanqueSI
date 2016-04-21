@@ -35,10 +35,9 @@ public class daoClientTest extends TestCase {
     public void testGetAll() throws Exception {
         System.out.println("getAll");
         daoClient instance = new daoClient();
-//        List<Client> expResult = null;
-//        List<Client> result = instance.getAll();
-//        assertEquals(result.size(), 1);
-        assert(true);
+        List<Client> expResult = null;
+        List<Client> result = instance.getAll();
+        assertEquals(result.size(), 1);
         // TODO review the generated test code and remove the default call to fail.
         
     }
